@@ -1,0 +1,49 @@
+{
+  "businessName": "Olaboung Grace of God",
+  "industry": "Manufacturing",
+  "tone": "professional",
+  "tagline": "Excellence in Manufacturing, Trusted Quality",
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero",
+      "copy": "Olaboung Grace of God - Your Trusted Manufacturing Partner in Abuja. Delivering quality products and reliable solutions for businesses across Nigeria. Experience excellence in manufacturing with a partner that understands your needs.",
+      "imagePrompt": "Modern industrial manufacturing facility in Nigeria, well-lit factory floor with organized production lines, quality control stations, Nigerian workers in safety gear operating machinery, professional atmosphere, bright natural lighting through large windows, clean and efficient workspace, blue and silver industrial equipment, focus on precision and quality",
+      "layout": "centered"
+    },
+    {
+      "id": "about",
+      "name": "About Us",
+      "copy": "At Olaboung Grace of God, we are committed to delivering exceptional manufacturing solutions that meet the highest standards of quality and reliability. Located in the heart of Abuja, our facility combines modern technology with experienced craftsmanship to serve businesses across Nigeria. We understand the unique challenges of the Nigerian market and provide tailored manufacturing services that help our clients succeed. Our dedication to excellence, timely delivery, and customer satisfaction has made us a trusted name in the manufacturing sector.",
+      "imagePrompt": "Professional Nigerian manufacturing team in a modern factory setting, diverse group of skilled workers and engineers collaborating, background showing organized production area with quality machinery, warm professional lighting, sense of teamwork and expertise, modern industrial interior in Abuja, clean and professional environment",
+      "layout": "split"
+    },
+    {
+      "id": "services",
+      "name": "Our Services",
+      "copy": "We offer comprehensive manufacturing solutions tailored to meet your business needs:\n\n• Custom Manufacturing - Precision production customized to your specifications\n• Quality Control - Rigorous testing and inspection at every stage\n• Product Development - From concept to finished product\n• Supply Chain Management - Reliable sourcing and timely delivery\n• Consultation Services - Expert advice on manufacturing processes\n\nOur state-of-the-art facility and experienced team ensure that every project meets the highest standards of quality and efficiency.",
+      "imagePrompt": "Collage-style view of various manufacturing processes in a Nigerian facility, close-up shots of precision machinery, quality control inspection with measuring instruments, finished products being packaged, workers wearing safety equipment, modern industrial setting with good lighting, professional and organized workspace, emphasis on quality and attention to detail",
+      "layout": "grid"
+    },
+    {
+      "id": "why-choose-us",
+      "name": "Why Choose Us",
+      "copy": "• Proven Track Record - Years of successful manufacturing projects across Nigeria\n• Quality Assurance - Strict quality control measures on every product\n• Modern Equipment - State-of-the-art machinery and technology\n• Experienced Team - Skilled professionals dedicated to excellence\n• Competitive Pricing - Quality manufacturing at fair prices\n• On-Time Delivery - Reliable production schedules you can count on\n• Strategic Location - Easily accessible facility in Abuja\n• Customer-Focused - Your satisfaction is our priority",
+      "imagePrompt": "Professional manufacturing showcase featuring Nigerian workers inspecting high-quality finished products, modern factory background with organized production lines, certificates or quality badges visible, bright and clean industrial environment, sense of pride and professionalism, close-up of precision-made products, Abuja industrial setting",
+      "layout": "cards"
+    },
+    {
+      "id": "contact",
+      "name": "Contact Us",
+      "copy": "Ready to discuss your manufacturing needs? Get in touch with us today.\n\nFloor 2, Nikem Complex\nPolice Signboard, Lugbe\nAbuja, Nigeria\n\nPhone: 0802 441 4409\n\nOur team is ready to provide you with professional manufacturing solutions that meet your exact requirements. Contact us for a consultation or to request a quote. We look forward to partnering with you.",
+      "imagePrompt": "Professional Nigerian business contact scene, modern office reception area in Abuja, friendly staff member ready to assist, visible contact information display, clean corporate environment, phone and computer on desk, welcoming atmosphere, large windows showing Abuja cityscape, professional yet approachable setting",
+      "layout": "centered"
+    }
+  ],
+  "contact": {
+    "phone": "0802 441 4409",
+    "email": "",
+    "address": "Floor 2, Nikem Complex, Police Signboard, Lugbe, Abuja, Nigeria",
+    "whatsapp": "https://wa.me/2348024414409"
+  }
+}
