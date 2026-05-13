@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olaboung Grace of God - Excellence in Manufacturing, Trusted Quality</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500&display=swap">
+    <style>
+        :root {
+            --color-primary: #100900;
+            --color-accent: #fd350e;
+            --color-bg: #FAF0E8;
+            --color-text: #180A00;
+            --color-surface: #261300;
+            --color-secondary-accent: #7da2b0;
+            --font-display: 'Barlow Condensed', sans-serif;
+            --font-body: 'IBM Plex Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(250, 240, 232, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            box-shadow: 0 4px 8px rgba(16, 9, 0, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--color-text);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 300px;
+            height: calc(100vh - 70px);
+            background: var(--color-bg);
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu ul a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .mobile-menu ul a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Hero Section */
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.pexels.com/photos/7178310/pexels-photo-7178310.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        #hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+            padding: 0 5%;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 4px 4px 0 rgba(253, 53, 14, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--color-accent);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 6px 6px 0 var(--color-primary);
+        }
+
+        .cta-button:hover {
+            transform: translate(3px, 3px);
+            box-shadow: 3px 3px 0 var(--color-primary);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: var(--color-primary);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--color-accent);
+        }
+
+        /* About Section */
+        #about {
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.1s;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            box-shadow: 12px 12px 0 var(--color-accent);
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        /* Services Section */
+        #services {
+            background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-primary) 100%);
+            color: var(--color-bg);
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        #services h2 {
+            color: var(--color-bg);
+        }
+
+        #services h2::after {
+            background: var(--color-accent);
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(250, 240, 232, 0.1);
+            padding: 2rem;
+            border-left: 4px solid var(--color-accent);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+        }
+
+        .service-card p {
+            line-height: 1.8;
+        }
+
+        /* Why Choose Us */
+        #why-choose-us {
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        .why-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .why-card {
+            background: white;
+            padding: 2rem;
+            box-shadow: 8px 8px 0 var(--color-primary);
+            border-left: 4px solid var(--color-accent);
+        }
+
+        .why-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--color-primary);
+        }
+
+        .why-card p {
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--color-surface);
+            color: var(--color-bg);
+            text-align: center;
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.4s;
+        }
+
+        #contact h2 {
+            color: var(--color-bg);
+        }
+
+        #contact h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 1.9;
+        }
+
+        .contact-info {
+            margin: 2rem 0;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+        }
+
+        .contact-info a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--color-secondary-accent);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-primary);
+            color: var(--color-bg);
+            text-align: center;
+            padding: 2rem 5%;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            section {
+                padding: 60px 5%;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            section h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            section {
+                padding: 48px 5%;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                height: 350px;
+            }
+
+            .services-container,
+            .why-container {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#hero" class="logo">Olaboung Grace of God</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose-us">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-choose-us">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Olaboung Grace of God</h1>
+            <p>Your Trusted Manufacturing Partner in Abuja. Delivering quality products and reliable solutions for businesses across Nigeria. Experience excellence in manufacturing with a partner that understands your needs.</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-container">
+            <img src="https://images.pexels.com/photos/37198885/pexels-photo-37198885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="About Olaboung Grace of God" class="about-image">
+            <div class="about-text">
+                <p>At Olaboung Grace of God, we are committed to delivering exceptional manufacturing solutions that meet the highest standards of quality and reliability. Located in the heart of Abuja, our facility combines modern technology with experienced craftsmanship to serve businesses across Nigeria.</p>
+                <p>We understand the unique challenges of the Nigerian market and provide tailored manufacturing services that help our clients succeed. Our dedication to excellence, timely delivery, and customer satisfaction has made us a trusted name in the manufacturing sector.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <h3>Custom Manufacturing</h3>
+                <p>Precision production customized to your specifications</p>
+            </div>
+            <div class="service-card">
+                <h3>Quality Control</h3>
+                <p>Rigorous testing and inspection at every stage</p>
+            </div>
+            <div class="service-card">
+                <h3>Product Development</h3>
+                <p>From concept to finished product</p>
+            </div>
+            <div class="service-card">
+                <h3>Supply Chain Management</h3>
+                <p>Reliable sourcing and timely delivery</p>
+            </div>
+            <div class="service-card">
+                <h3>Consultation Services</h3>
+                <p>Expert advice on manufacturing processes</p>
+            </div>
+        </div>
+        <p style="margin-top: 3rem; font-size: 1.1rem; line-height: 1.8;">Our state-of-the-art facility and experienced team ensure that every project meets the highest standards of quality and efficiency.</p>
+    </section>
+
+    <section id="why-choose-us">
+        <h2>Why Choose Us</h2>
+        <div class="why-container">
+            <div class="why-card">
+                <h3>Proven Track Record</h3>
+                <p>Years of successful manufacturing projects across Nigeria</p>
+            </div>
+            <div class="why-card">
+                <h3>Quality Assurance</h3>
+                <p>Strict quality control measures on every product</p>
+            </div>
+            <div class="why-card">
+                <h3>Modern Equipment</h3>
+                <p>State-of-the-art machinery and technology</p>
+            </div>
+            <div class="why-card">
+                <h3>Experienced Team</h3>
+                <p>Skilled professionals dedicated to excellence</p>
+            </div>
+            <div class="why-card">
+                <h3>Competitive Pricing</h3>
+                <p>Quality manufacturing at fair prices</p>
+            </div>
+            <div class="why-card">
+                <h3>On-Time Delivery</h3>
+                <p>Reliable production schedules you can count on</p>
+            </div>
+            <div class="why-card">
+                <h3>Strategic Location</h3>
+                <p>Easily accessible facility in Abuja</p>
+            </div>
+            <div class="why-card">
+                <h3>Customer-Focused</h3>
+                <p>Your satisfaction is our priority</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-content">
+            <p>Ready to discuss your manufacturing needs? Get in touch with us today.</p>
+            <div class="contact-info">
+                <p><strong>Address:</strong><br>Floor 2, Nikem Complex<br>Police Signboard, Lugbe<br>Abuja, Nigeria</p>
+                <p><strong>Phone:</strong> <a href="tel:08024414409">0802 441 4409</a></p>
+            </div>
+            <p>Our team is ready to provide you with professional manufacturing solutions that meet your exact requirements. Contact us for a consultation or to request a quote. We look forward to partnering with you.</p>
+            <a href="#contact" class="cta-button" style="margin-top: 2rem;">Request a Quote</a>
+        </div>
+    </section>
+
+    <a href="https://wa.me/2348024414409" target="_blank" class="whatsapp-float">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
+
+    <footer>
+        <p>&copy; 2024 Olaboung Grace of God. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
